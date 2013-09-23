@@ -15,5 +15,12 @@
             <artifactId>jsoup</artifactId>
             <version>1.7.2</version>
         </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+
     </dependencies>
 </project>

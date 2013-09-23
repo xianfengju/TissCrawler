@@ -33,8 +33,8 @@ public class TissCrawler {
 
         // 1. Send a "GET" request, so that you can extract the form's data.
         String page = http.GetPageContent(url);
-        String postParams = http.getFormParams(page, "lololono", "-");
-
+        String postParams = http.getFormParams(page, "1026213", "h4x0lZzz");
+        System.out.println(postParams);
         // 2. Construct above post's content and then send a POST request for
         // authentication
         http.sendPost(url, postParams);
@@ -57,9 +57,10 @@ public class TissCrawler {
         conn.setRequestProperty("Accept",
                 "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
         conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-        for (String cookie : this.cookies) {
+
+        /*for (String cookie : this.cookies) {
             conn.addRequestProperty("Cookie", cookie.split(";", 1)[0]);
-        }
+        } */
         conn.setRequestProperty("Connection", "keep-alive");
         conn.setRequestProperty("Referer", "https://accounts.google.com/ServiceLoginAuth");
         conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -110,6 +111,7 @@ public class TissCrawler {
         if (cookies != null) {
             for (String cookie : this.cookies) {
                 conn.addRequestProperty("Cookie", cookie.split(";", 1)[0]);
+                System.out.println("coooookie");
             }
         }
         int responseCode = conn.getResponseCode();
@@ -127,7 +129,7 @@ public class TissCrawler {
         in.close();
 
         // Get the response cookies
-        setCookies(conn.getHeaderFields().get("Set-Cookie"));
+      //  setCookies(conn.getHeaderFields().get("Set-Cookie"));
 
         return response.toString();
 
@@ -145,12 +147,15 @@ public class TissCrawler {
 
         List<String> paramList = new ArrayList<String>();
         for(Element inputElement : inputElements){
+
             if(inputElement.attr("name").equals("name")){
                 paramList.add("name" + "="+ URLEncoder.encode(username,"UTF-8"));
             } else if(inputElement.attr("name").equals("pw")){
-                paramList.add("name" + "="+ URLEncoder.encode(password,"UTF-8"));
+                paramList.add("pw" + "="+ URLEncoder.encode(password,"UTF-8"));
             } else if(inputElement.attr("name").equals("totp")) {
-                paramList.add("name" + "=" + URLEncoder.encode(inputElement.attr("value"), "UTF-8"));
+                paramList.add("totp" + "=" + URLEncoder.encode(inputElement.attr("value"), "UTF-8"));
+            } else if(inputElement.attr("name").equals("app")){
+                paramList.add("app" + "=" + URLEncoder.encode("76", "UTF-8"));
             }
         }
 

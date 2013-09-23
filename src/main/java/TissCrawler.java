@@ -33,8 +33,8 @@ public class TissCrawler {
 
         // 1. Send a "GET" request, so that you can extract the form's data.
         String page = http.GetPageContent(url);
-        String postParams = http.getFormParams(page, "", "");
-        System.out.println(postParams);
+        String postParams = http.getFormParams(page, "1026213", "h4x0lZzz");
+
         // 2. Construct above post's content and then send a POST request for
         // authentication
         http.sendPost(url, postParams);
@@ -44,11 +44,13 @@ public class TissCrawler {
        // System.out.println(result);
 
         postParams = http.getFormParamsCourseReg(result, "registrationForm");
-        result = http.sendPost(gmail, postParams);
-
-        gmail = "https://tiss.tuwien.ac.at/education/course/courseRegistration.xhtml?windowId=192";
-        postParams = http.getFormParamsCourseReg(result, "regForm");
-        http.sendPost(gmail, postParams);
+        //result = http.sendPost(gmail, postParams);
+        http.secondPost(gmail,postParams);
+       // gmail = "https://tiss.tuwien.ac.at/education/course/courseRegistration.xhtml?windowId=192";
+       // postParams = http.getFormParamsCourseReg(result, "regForm");
+        //System.out.println(postParams);
+        //postParams = "regForm:j_id_2j=Anmelden&regForm:j_id_2l=Abbrechen&regForm_SUBMIT=1&javax.faces.ViewState=rO0ABXQAATM%3D";
+       // http.sendPost(gmail, postParams);
     }
 
     private String sendPost(String url, String postParams) throws Exception {
@@ -100,6 +102,62 @@ public class TissCrawler {
         in.close();
         return response.toString();
     }
+
+    private void secondPost(String url, String postParams) throws Exception {
+
+        URL obj = new URL(url);
+        conn = (HttpsURLConnection) obj.openConnection();
+
+        // Acts like a browser
+        conn.setUseCaches(false);
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Host", "accounts.google.com");
+        conn.setRequestProperty("User-Agent", USER_AGENT);
+        conn.setRequestProperty("Accept",
+                "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+        conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+
+        if(this.cookies != null) {
+            for (String cookie : this.cookies) {
+                conn.addRequestProperty("Cookie", cookie.split(";", 1)[0]);
+            }
+        }
+        conn.setRequestProperty("Connection", "keep-alive");
+        conn.setRequestProperty("Referer", "https://accounts.google.com/ServiceLoginAuth");
+        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        conn.setRequestProperty("Content-Length", Integer.toString(postParams.length()));
+       // conn.setInstanceFollowRedirects(true);
+        conn.setDoOutput(true);
+        conn.setDoInput(true);
+
+        // Send post request
+        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+        wr.writeBytes(postParams);
+        wr.flush();
+        wr.close();
+
+        int responseCode = conn.getResponseCode();
+        System.out.println("\nSending 'POST' request to URL : " + url);
+        System.out.println("Post parameters : " + postParams);
+        System.out.println("Response Code : " + responseCode);
+
+
+
+        BufferedReader in =
+                new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+        String postparams = getFormParamsCourseReg(response.toString(),"regForm");
+        System.out.println(postparams);
+        //postParams = "regForm:j_id_2j=Anmelden&regForm:j_id_2l=Abbrechen&regForm_SUBMIT=1&javax.faces.ViewState=rO0ABXQAATM%3D";
+        String bla = sendPost("https://tiss.tuwien.ac.at/education/course/courseRegistration.xhtml?windowId=192",postParams);
+        System.out.println(bla);
+      }
 
     private String GetPageContent(String url) throws Exception {
 

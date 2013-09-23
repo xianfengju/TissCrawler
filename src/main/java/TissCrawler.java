@@ -46,6 +46,8 @@ public class TissCrawler {
         postParams = http.getFormParamsCourseReg(result);
         result = http.sendPost(gmail, postParams);
 
+        System.out.println(result);
+
     }
 
     private String sendPost(String url, String postParams) throws Exception {
@@ -62,9 +64,11 @@ public class TissCrawler {
                 "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
         conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 
-        /*for (String cookie : this.cookies) {
-            conn.addRequestProperty("Cookie", cookie.split(";", 1)[0]);
-        } */
+        if(this.cookies != null) {
+            for (String cookie : this.cookies) {
+                conn.addRequestProperty("Cookie", cookie.split(";", 1)[0]);
+            }
+        }
         conn.setRequestProperty("Connection", "keep-alive");
         conn.setRequestProperty("Referer", "https://accounts.google.com/ServiceLoginAuth");
         conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");

@@ -44,13 +44,11 @@ public class TissCrawler {
        // System.out.println(result);
 
         postParams = http.getFormParamsCourseReg(result, "registrationForm");
+
+
         //result = http.sendPost(gmail, postParams);
         http.secondPost(gmail,postParams);
-       // gmail = "https://tiss.tuwien.ac.at/education/course/courseRegistration.xhtml?windowId=192";
-       // postParams = http.getFormParamsCourseReg(result, "regForm");
-        //System.out.println(postParams);
-        //postParams = "regForm:j_id_2j=Anmelden&regForm:j_id_2l=Abbrechen&regForm_SUBMIT=1&javax.faces.ViewState=rO0ABXQAATM%3D";
-       // http.sendPost(gmail, postParams);
+
     }
 
     private String sendPost(String url, String postParams) throws Exception {
@@ -154,8 +152,9 @@ public class TissCrawler {
         in.close();
         String postparams = getFormParamsCourseReg(response.toString(),"regForm");
         System.out.println(postparams);
-        //postParams = "regForm:j_id_2j=Anmelden&regForm:j_id_2l=Abbrechen&regForm_SUBMIT=1&javax.faces.ViewState=rO0ABXQAATM%3D";
-        String bla = sendPost("https://tiss.tuwien.ac.at/education/course/courseRegistration.xhtml?windowId=192",postParams);
+       // postparams = "confirmForm%3Aj_id_2r=Ok&confirmForm_SUBMIT=1&javax.faces.ViewState=rO0ABXQAATk%3D";
+
+        String bla = sendPost("https://tiss.tuwien.ac.at/education/course/courseRegistration.xhtml?windowId=a2a",postparams);
         System.out.println(bla);
       }
 
@@ -270,6 +269,7 @@ public class TissCrawler {
         for (Element inputElement : inputElements) {
             String key = inputElement.attr("name");
             String value = inputElement.attr("value");
+
             paramList.add(key + "=" + URLEncoder.encode(value, "UTF-8"));
         }
         StringBuilder result = new StringBuilder();

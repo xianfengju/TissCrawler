@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8440881-8319-4b28-9b58-ecebab301af9" name="Default" comment="login done gg" />
-    <list id="45cdcdb8-95f2-4309-8ced-5577b015d37d" name="New changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="e8440881-8319-4b28-9b58-ecebab301af9" name="Default" comment="login done gg">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/TissCrawlerSoup.java" />
+      <change type="DELETED" beforePath="C:\Users\Alexander\Documents\GitHub\TissCrawler\.idea\libraries\Maven__commons_httpclient_commons_httpclient_3_1.xml" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Alexander\Documents\GitHub\TissCrawler\.idea\libraries\Maven__commons_codec_commons_codec_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" />
+      <change type="MOVED" beforePath="C:\Users\Alexander\Documents\GitHub\TissCrawler\.idea\libraries\Maven__commons_logging_commons_logging_1_0_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TissCrawler.iml" afterPath="$PROJECT_DIR$/TissCrawler.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/TissCrawler.java" afterPath="$PROJECT_DIR$/src/main/java/TissCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="45cdcdb8-95f2-4309-8ced-5577b015d37d" name="New changelist" comment="" />
     <ignored path="TissCrawler.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379965093116" ignored="false" />
+    <file path="/Dummy.txt" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379973367849" ignored="false" />
     <file path="/.gitignore" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379954114895" ignored="false" />
-    <file path="/TissCrawler.java" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379964924411" ignored="false" />
+    <file path="/TissCrawler.java" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379966883680" ignored="false" />
     <file path="/pom.xml" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379952048037" ignored="false" />
     <file path="/ApacheTiss.java" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379956231497" ignored="false" />
     <file path="/fragment.java" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379964635267" ignored="false" />
+    <file path="/TissCrawlerSoup.java" changelist="e8440881-8319-4b28-9b58-ecebab301af9" time="1379973038769" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +92,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TissCrawler.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TissCrawler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/TissCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="32" selection-start="6437" selection-end="6437" vertical-scroll-proportion="0.7175141">
+            <state line="100" column="57" selection-start="3664" selection-end="3664" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TissCrawlerSoup.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TissCrawlerSoup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="61" selection-start="2471" selection-end="2471" vertical-scroll-proportion="1.6563706">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2786#2802#0" expanded="true" />
+                <element signature="e#2922#2930#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="7" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,9 +145,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/TissCrawler.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ApacheTiss.java" />
         <option value="$PROJECT_DIR$/src/main/java/TissCrawler.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/TissCrawlerSoup.java" />
       </list>
     </option>
   </component>
@@ -243,7 +275,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
-  <component name="RunManager" selected="Application.TissCrawler">
+  <component name="RunManager" selected="Application.TissCrawlerSoup">
     <configuration default="false" name="TissCrawler" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="TissCrawler" />
@@ -264,6 +296,23 @@
     <configuration default="false" name="ApacheTiss" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ApacheTiss" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TissCrawler" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TissCrawlerSoup" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="TissCrawlerSoup" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -369,14 +418,16 @@
       <patterns />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.TissCrawler" />
       <item index="1" class="java.lang.String" itemvalue="Application.ApacheTiss" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TissCrawlerSoup" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.TissCrawler" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ApacheTiss" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.TissCrawlerSoup" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TissCrawler" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ApacheTiss" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -409,7 +460,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -425,7 +476,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24919957" sideWeight="0.6202673" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37973273" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37973273" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -507,22 +558,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/TissCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="116" selection-start="1782" selection-end="1782" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TissCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="44" selection-start="2292" selection-end="2292" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
@@ -591,13 +626,6 @@
         <state line="6" column="13" selection-start="146" selection-end="242" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="13" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TissCrawler.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
@@ -605,18 +633,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+        <state line="17" column="7" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TissCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="32" selection-start="6437" selection-end="6437" vertical-scroll-proportion="0.7175141">
+        <state line="100" column="57" selection-start="3664" selection-end="3664" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TissCrawlerSoup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="61" selection-start="2471" selection-end="2471" vertical-scroll-proportion="1.6563706">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2786#2802#0" expanded="true" />
+            <element signature="e#2922#2930#0" expanded="true" />
           </folding>
         </state>
       </provider>

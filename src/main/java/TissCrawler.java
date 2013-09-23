@@ -23,8 +23,8 @@ public class TissCrawler {
 
     public static void main(String[] args) throws Exception {
 
-        String url = "https://accounts.google.com/ServiceLoginAuth";
-        String gmail = "https://mail.google.com/mail/";
+        String url = "https://iu.zid.tuwien.ac.at/AuthServ.authenticate?app=76";
+        String gmail = "https://tiss.tuwien.ac.at/education/favorites.xhtml?windowId=629";
 
         TissCrawler http = new TissCrawler();
 
@@ -33,7 +33,7 @@ public class TissCrawler {
 
         // 1. Send a "GET" request, so that you can extract the form's data.
         String page = http.GetPageContent(url);
-        String postParams = http.getFormParams(page, "username@gmail.com", "password");
+        String postParams = http.getFormParams(page, "lololono", "-");
 
         // 2. Construct above post's content and then send a POST request for
         // authentication
@@ -141,10 +141,22 @@ public class TissCrawler {
         Document doc = Jsoup.parse(html);
 
         // Google form id
-        Element loginform = doc.getElementById("gaia_loginform");
-        Elements inputElements = loginform.getElementsByTag("input");
+        Elements inputElements = doc.getElementsByAttribute("name");
         List<String> paramList = new ArrayList<String>();
-        for (Element inputElement : inputElements) {
+        for(Element inputElement : inputElements){
+            if(inputElement.attr("name").equals("name")){
+                String value = inputElement.attr("value");
+                value=username;
+                paramList.add("name" + "="+ URLEncoder.encode(value,"UTF-8"));
+            }
+
+
+        }
+
+        /*Element loginform = doc.getElementById("gaia_loginform");
+        Elements inputElements = loginform.getElementsByTag("input"); */
+        //  List<String> paramList = new ArrayList<String>();
+        /*for (Element inputElement : inputElements) {
             String key = inputElement.attr("name");
             String value = inputElement.attr("value");
 
@@ -153,7 +165,7 @@ public class TissCrawler {
             else if (key.equals("Passwd"))
                 value = password;
             paramList.add(key + "=" + URLEncoder.encode(value, "UTF-8"));
-        }
+        }*/
 
         // build parameters list
         StringBuilder result = new StringBuilder();

@@ -1,6 +1,7 @@
 #################
 ## Eclipse
 #################
+workspace.xml
 *.iml
 *.pydevproject
 .project

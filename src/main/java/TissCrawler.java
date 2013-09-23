@@ -24,7 +24,7 @@ public class TissCrawler {
     public static void main(String[] args) throws Exception {
 
         String url = "https://iu.zid.tuwien.ac.at/AuthServ.authenticate?app=76";
-        String gmail = "https://tiss.tuwien.ac.at/education/favorites.xhtml?windowId=629";
+        String gmail = "https://tiss.tuwien.ac.at/education/course/courseRegistration.xhtml?windowId=7cd&courseNr=107273&semester=2013S";
 
         TissCrawler http = new TissCrawler();
 
@@ -33,7 +33,7 @@ public class TissCrawler {
 
         // 1. Send a "GET" request, so that you can extract the form's data.
         String page = http.GetPageContent(url);
-        String postParams = http.getFormParams(page, "1026213", "h4x0lZzz");
+        String postParams = http.getFormParams(page, "1029175", "lhxmgrs3f2g");
         System.out.println(postParams);
         // 2. Construct above post's content and then send a POST request for
         // authentication
@@ -41,10 +41,14 @@ public class TissCrawler {
 
         // 3. success then go to gmail.
         String result = http.GetPageContent(gmail);
-        System.out.println(result);
+       // System.out.println(result);
+
+        postParams = http.getFormParamsCourseReg(result);
+        result = http.sendPost(gmail, postParams);
+
     }
 
-    private void sendPost(String url, String postParams) throws Exception {
+    private String sendPost(String url, String postParams) throws Exception {
 
         URL obj = new URL(url);
         conn = (HttpsURLConnection) obj.openConnection();
@@ -89,8 +93,7 @@ public class TissCrawler {
             response.append(inputLine);
         }
         in.close();
-        // System.out.println(response.toString());
-
+        return response.toString();
     }
 
     private String GetPageContent(String url) throws Exception {
@@ -192,5 +195,30 @@ public class TissCrawler {
     public void setCookies(List<String> cookies) {
         this.cookies = cookies;
     }
+
+    public String getFormParamsCourseReg(String html) throws UnsupportedEncodingException {
+        // act like a browser
+        Document doc = Jsoup.parse(html);
+        System.out.println(html);
+        Element loginform = doc.getElementById("registrationForm");
+
+        Elements inputElements = loginform.getElementsByTag("input");
+        List<String> paramList = new ArrayList<String>();
+        for (Element inputElement : inputElements) {
+            String key = inputElement.attr("name");
+            String value = inputElement.attr("value");
+            paramList.add(key + "=" + URLEncoder.encode(value, "UTF-8"));
+        }
+        StringBuilder result = new StringBuilder();
+        for (String param : paramList) {
+            if (result.length() == 0) {
+                result.append(param);
+            } else {
+                result.append("&" + param);
+            }
+        }
+        return result.toString();
+    }
+
 
 }

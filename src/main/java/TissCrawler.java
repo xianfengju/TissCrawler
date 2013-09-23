@@ -33,7 +33,7 @@ public class TissCrawler {
 
         // 1. Send a "GET" request, so that you can extract the form's data.
         String page = http.GetPageContent(url);
-        String postParams = http.getFormParams(page, "1029175", "lhxmgrs3f2g");
+        String postParams = http.getFormParams(page, "", "");
         System.out.println(postParams);
         // 2. Construct above post's content and then send a POST request for
         // authentication
@@ -43,11 +43,12 @@ public class TissCrawler {
         String result = http.GetPageContent(gmail);
        // System.out.println(result);
 
-        postParams = http.getFormParamsCourseReg(result);
+        postParams = http.getFormParamsCourseReg(result, "registrationForm");
         result = http.sendPost(gmail, postParams);
 
-        System.out.println(result);
-
+        gmail = "https://tiss.tuwien.ac.at/education/course/courseRegistration.xhtml?windowId=192";
+        postParams = http.getFormParamsCourseReg(result, "regForm");
+        http.sendPost(gmail, postParams);
     }
 
     private String sendPost(String url, String postParams) throws Exception {
@@ -200,11 +201,11 @@ public class TissCrawler {
         this.cookies = cookies;
     }
 
-    public String getFormParamsCourseReg(String html) throws UnsupportedEncodingException {
+    public String getFormParamsCourseReg(String html, String formId) throws UnsupportedEncodingException {
         // act like a browser
         Document doc = Jsoup.parse(html);
         System.out.println(html);
-        Element loginform = doc.getElementById("registrationForm");
+        Element loginform = doc.getElementById(formId);
 
         Elements inputElements = loginform.getElementsByTag("input");
         List<String> paramList = new ArrayList<String>();

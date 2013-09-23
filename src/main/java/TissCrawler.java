@@ -142,15 +142,16 @@ public class TissCrawler {
 
         // Google form id
         Elements inputElements = doc.getElementsByAttribute("name");
+
         List<String> paramList = new ArrayList<String>();
         for(Element inputElement : inputElements){
             if(inputElement.attr("name").equals("name")){
-                String value = inputElement.attr("value");
-                value=username;
-                paramList.add("name" + "="+ URLEncoder.encode(value,"UTF-8"));
+                paramList.add("name" + "="+ URLEncoder.encode(username,"UTF-8"));
+            } else if(inputElement.attr("name").equals("pw")){
+                paramList.add("name" + "="+ URLEncoder.encode(password,"UTF-8"));
+            } else if(inputElement.attr("name").equals("totp")) {
+                paramList.add("name" + "=" + URLEncoder.encode(inputElement.attr("value"), "UTF-8"));
             }
-
-
         }
 
         /*Element loginform = doc.getElementById("gaia_loginform");

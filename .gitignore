@@ -1,6 +1,9 @@
 #################
 ## Eclipse
 #################
+target/
+.idea/
+
 workspace.xml
 *.iml
 *.pydevproject

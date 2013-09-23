@@ -1,5 +1,3 @@
-package com.mkyong;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -28,7 +26,7 @@ public class TissCrawler {
         String url = "https://accounts.google.com/ServiceLoginAuth";
         String gmail = "https://mail.google.com/mail/";
 
-        HttpUrlConnectionExample http = new HttpUrlConnectionExample();
+        TissCrawler http = new TissCrawler();
 
         // make sure cookies is turn on
         CookieHandler.setDefault(new CookieManager());

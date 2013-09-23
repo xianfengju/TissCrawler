@@ -25,8 +25,8 @@ public class TissCrawlerSoup {
     public static void main (String args[]) {
         try {
                      Response res =  Jsoup.connect("https://iu.zid.tuwien.ac.at/AuthServ.authenticate?app=76")
-                     .data("name","yolo")
-                     .data("pw", "yolo")
+                     .data("name","1026213")
+                     .data("pw", "h4x0lZzz")
                      .data("totp", "")
                      .data("app","76")
                      .method(Connection.Method.POST)

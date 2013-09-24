@@ -1,4 +1,3 @@
-
 import org.jsoup.Connection;
 import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
@@ -25,8 +24,8 @@ public class TissCrawlerSoup {
     public static void main (String args[]) {
         try {
                      Response res =  Jsoup.connect("https://iu.zid.tuwien.ac.at/AuthServ.authenticate?app=76")
-                     .data("name","1026213")
-                     .data("pw", "h4x0lZzz")
+                     .data("name","1232323yolo")
+                     .data("pw", "yololo")
                      .data("totp", "")
                      .data("app","76")
                      .method(Connection.Method.POST)
